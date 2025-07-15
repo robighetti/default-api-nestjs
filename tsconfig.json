@@ -1,6 +1,5 @@
 {
-  "compilerOptions": {
-    "module": "commonjs",
+  "compilerOptions": {    
     "declaration": true,
     "removeComments": true,
     "emitDecoratorMetadata": true,
@@ -16,6 +15,14 @@
     "forceConsistentCasingInFileNames": true,
     "noImplicitAny": false,
     "strictBindCallApply": false,
-    "noFallthroughCasesInSwitch": false
+    "noFallthroughCasesInSwitch": false,
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+     "paths": {
+      "@/*": ["src/*"],
+      "@core/*": ["src/core/*"],
+      "@infra/*": ["src/infra/*"],
+      "@domains/*": ["src/domains/*"],
+    },
   }
 }

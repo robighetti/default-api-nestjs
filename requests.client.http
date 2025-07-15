@@ -1,0 +1,28 @@
+@baseUrl = http://localhost:3333
+@token = {{authenticate.response.body.access_token}}
+
+###
+
+# @name createAccount
+POST {{baseUrl}}/accounts
+Content-Type: application/json
+
+{
+  "name": "Rodrigo Bighetti",
+  "email": "rodrigo@stack2u.net",
+  "whatsapp": "+55 19 999828057",
+  "password": "P@ssW0rd"
+}
+
+###
+
+# @name authenticate
+POST {{baseUrl}}/sessions
+Content-Type: application/json
+
+{
+  "email": "rodrigo@email.com",
+  "password": "123456"
+}
+
+###
