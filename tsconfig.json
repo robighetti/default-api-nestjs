@@ -16,8 +16,7 @@
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "noFallthroughCasesInSwitch": false,
-    "module": "nodenext",
-    "moduleResolution": "nodenext",
+    "module": "commonjs",
      "paths": {
       "@/*": ["src/*"],
       "@core/*": ["src/core/*"],
