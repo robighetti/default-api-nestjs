@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  postgres:
+    container_name: stack-api-pg
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: docker@123
+      POSTGRES_DB: nest_clean
+      PGDATA: /data/postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./data/pg:/var/lib/postgresql/data
