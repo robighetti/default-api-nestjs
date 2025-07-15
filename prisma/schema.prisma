@@ -3,15 +3,14 @@ generator client {
 }
 
 datasource db {
-  provider          = "postgresql"
-  url               = env("DATABASE_URL")
-  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
 model Profiles {
   id          String  @id @default(uuid())
   description String
-  is_admin    Boolean @default(false)
+  permissions Json
   status      Boolean @default(true)
   users       Users[]
 
@@ -38,9 +37,8 @@ model Tokens {
   id        String   @id @default(uuid())
   token     String
   createdAt DateTime @default(now())
-
-  user    Users  @relation(fields: [user_id], references: [id])
-  user_id String
+  user      Users    @relation(fields: [user_id], references: [id])
+  user_id   String
 
   @@map("tokens")
 }
