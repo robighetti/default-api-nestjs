@@ -1,16 +1,15 @@
-import { Body, Controller, HttpStatus, Post } from "@nestjs/common"
-import { ApiResponse, ApiTags } from "@nestjs/swagger"
+import { Body, Controller, HttpStatus, Post, UsePipes, ValidationPipe } from "@nestjs/common"
+import { ApiBadRequestResponse, ApiCreatedResponse, ApiResponse, ApiTags, ApiUnauthorizedResponse } from "@nestjs/swagger"
 import { SessionResponseDto } from "./dto/session.response.dto"
 import { SessionRequestDto } from "./dto/session.reques.dto"
 import { SessionsService } from "./sessions.service"
-import { JwtService } from "@nestjs/jwt"
 
 @ApiTags("Sessions")
 @Controller("sessions")
+@UsePipes(new ValidationPipe({ transform: true }))
 export class SessionsController {
   constructor(
     private readonly sessionsService: SessionsService,
-    private readonly jwtService: JwtService,
   ) {}
 
   @Post()
@@ -19,6 +18,10 @@ export class SessionsController {
     status: HttpStatus.OK,
     description: "Return the session payload",
   })
+  @ApiCreatedResponse({
+    description: 'Session created successfully',
+    type: SessionResponseDto,
+  })  
   async createSession(
     @Body() body: SessionRequestDto,
   ): Promise<SessionResponseDto> {

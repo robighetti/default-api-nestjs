@@ -38,6 +38,9 @@ export class SessionsService {
       user: {
         name: user.name,
         email: user.email,
+        whatsapp: user.whatsapp || "",
+        avatar: user.avatar || "",
+        id_profile: user.id_profile || "",
       },
     }
   }

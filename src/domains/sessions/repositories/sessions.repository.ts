@@ -11,17 +11,8 @@ export class SessionsRepository implements SessionsRepositoryInterface {
       where: {
         email,
       },
-      select: {
-        id: true,
-        name: true,
-        email: true,
-        whatsapp: true,
-        avatar: true,
-        password: true,
-        id_profile: true,
-        status: true,
-      },
     })
+
 
     return user
   }

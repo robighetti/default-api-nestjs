@@ -131,7 +131,7 @@ class Documentation {
 
   buildTextDocumentation() {
     this.generateTextDocumentation()
-    this.saveToFile("./src/docs/documentation.md", this.textDocument)
+    this.saveToFile("./src/core/docs/documentation.md", this.textDocument)
   }
 }
 
