@@ -1,10 +1,7 @@
-import { fileURLToPath } from "url"
-import { dirname, resolve } from "path"
+import { resolve } from "path"
 import swc from "unplugin-swc"
 import { defineConfig } from "vitest/config"
 import tsConfigPaths from "vite-tsconfig-paths"
-
-const __dirname = dirname(fileURLToPath(import.meta.url))
 
 export default defineConfig({
   test: {

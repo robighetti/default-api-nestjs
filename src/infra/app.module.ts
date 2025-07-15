@@ -2,8 +2,8 @@ import { Module } from "@nestjs/common"
 import { ConfigModule } from "@nestjs/config"
 
 import { envSchema } from "./env"
-import { HttpModule } from "./http/http.module"
 import { AuthModule } from "./auth/auth.module"
+import { DomainsModule } from "@/domains/domains.module"
 
 @Module({
   imports: [
@@ -12,7 +12,7 @@ import { AuthModule } from "./auth/auth.module"
       isGlobal: true,
     }),
     AuthModule,
-    HttpModule,
+    DomainsModule,
   ],
 })
 export class AppModule {}
