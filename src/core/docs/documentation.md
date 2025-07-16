@@ -1,5 +1,5 @@
 ## Default API Documentation
-*Automatically Generated at: Tue Jul 15 2025 13:50:46 GMT-0300 (Brasilia Standard Time)*
+*Automatically Generated at: Wed Jul 16 2025 09:05:41 GMT-0300 (Brasilia Standard Time)*
 
 ### [POST] /sessions
 **Parameters:**
@@ -20,5 +20,16 @@ access_token: The access token
 user: The user logged
 
 access_token: The access token
+
+
+### [POST] /accounts
+**Parameters:**
+
+| where | name | description | type | required |
+| --- | --- | --- | --- | --- |
+
+**Responses:**
+
+201: Return the account payload
 
 

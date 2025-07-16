@@ -3,7 +3,7 @@ import {
   Injectable,
   UnauthorizedException,
 } from "@nestjs/common"
-import { SessionRequestDto } from "./dto/session.reques.dto"
+import { SessionRequestDto } from "./dto/session.request.dto"
 import { SessionResponseDto } from "./dto/session.response.dto"
 import { SessionsRepository } from "./repositories/sessions.repository"
 import { compare } from "bcryptjs"

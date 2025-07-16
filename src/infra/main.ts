@@ -5,7 +5,6 @@ import { Env } from "./env"
 import { Logger, LogLevel } from "@nestjs/common"
 import { SwaggerModule, DocumentBuilder } from "@nestjs/swagger"
 import Documentation from "@/core/docs/documentation.entity"
-import * as compression from 'compression';
 
 async function bootstrap() {
   const logger = new Logger("Default-API")
@@ -58,7 +57,6 @@ async function bootstrap() {
   }
 
   app.enableCors()
-  app.use(compression());
 
   app.listen(port, "0.0.0.0").then(() => {
     logger.log("🔥 HTTP Server Running!")

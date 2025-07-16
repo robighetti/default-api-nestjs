@@ -5,7 +5,8 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "target": "es2021",
+    "target": "ES2022",
+    "lib": ["ES2022"],
     "sourceMap": true,
     "outDir": "./build",
     "baseUrl": "./",
@@ -16,12 +17,15 @@
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "noFallthroughCasesInSwitch": false,
-    "module": "commonjs",
-     "paths": {
+    "module": "NodeNext",    
+    "esModuleInterop": true,    
+    "paths": {
       "@/*": ["src/*"],
       "@core/*": ["src/core/*"],
       "@infra/*": ["src/infra/*"],
       "@domains/*": ["src/domains/*"],
-    },
-  }
+      "@test/*": ["test/*"]
+    }    
+  },
+  "exclude": ["node_modules", "build"]
 }
