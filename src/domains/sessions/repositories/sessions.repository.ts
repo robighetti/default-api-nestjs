@@ -13,7 +13,6 @@ export class SessionsRepository implements SessionsRepositoryInterface {
       },
     })
 
-
     return user
   }
 }

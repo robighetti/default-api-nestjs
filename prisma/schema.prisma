@@ -18,14 +18,14 @@ model Profiles {
 }
 
 model Users {
-  id         String  @id @default(uuid())
+  id         String   @id @default(uuid())
   name       String
-  email      String  @unique
+  email      String   @unique
   whatsapp   String
   avatar     String?
   password   String
   id_profile String
-  status     Boolean @default(true)
+  status     Boolean? @default(true)
 
   profile Profiles @relation(fields: [id_profile], references: [id])
   tokens  Tokens[]

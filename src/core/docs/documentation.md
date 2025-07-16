@@ -1,5 +1,5 @@
 ## Default API Documentation
-*Automatically Generated at: Wed Jul 16 2025 09:05:41 GMT-0300 (Brasilia Standard Time)*
+*Automatically Generated at: Wed Jul 16 2025 14:46:43 GMT-0300 (Brasilia Standard Time)*
 
 ### [POST] /sessions
 **Parameters:**
@@ -31,5 +31,15 @@ access_token: The access token
 **Responses:**
 
 201: Return the account payload
+
+id: The id of the user
+
+name: The name of the user
+
+email: The email of the user
+
+whatsapp: The whatsapp of the user
+
+id_profile: The id_profile of the user
 
 
