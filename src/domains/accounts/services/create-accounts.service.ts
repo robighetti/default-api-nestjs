@@ -1,14 +1,14 @@
 import { randomUUID } from "node:crypto"
 import { BadRequestException, Injectable } from "@nestjs/common"
-import { CreateAccountRequestDto } from "./dto/account-create.request.dto"
-import { CreateAccountResponseDto } from "./dto/account-create.response.dto"
-import { AccountsRepository } from "./repositories/accounts.repository"
+import { CreateAccountRequestDto } from "../dto/account-create.request.dto"
+import { CreateAccountResponseDto } from "../dto/account-create.response.dto"
+import { AccountsRepositoryInterface } from "../repositories/accounts.repository.interface"
 
 import { createHash } from "@/core/helpers/cryptography/encrypter"
 
 @Injectable()
-export class AccountsService {
-  constructor(private accountsRepository: AccountsRepository) {}
+export class CreateAccountsService {
+  constructor(private accountsRepository: AccountsRepositoryInterface) {}
 
   async createAccount(
     data: CreateAccountRequestDto,

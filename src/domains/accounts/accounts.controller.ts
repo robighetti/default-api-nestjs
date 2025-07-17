@@ -9,13 +9,13 @@ import {
 import { ApiResponse, ApiTags } from "@nestjs/swagger"
 import { CreateAccountRequestDto } from "./dto/account-create.request.dto"
 import { CreateAccountResponseDto } from "./dto/account-create.response.dto"
-import { AccountsService } from "./accounts.service"
+import { CreateAccountsService } from "./services/create-accounts.service"
 
 @ApiTags("Accounts")
 @Controller("accounts")
 @UsePipes(new ValidationPipe({ transform: true }))
 export class AccountsController {
-  constructor(private readonly accountsService: AccountsService) {}
+  constructor(private readonly accountsService: CreateAccountsService) {}
 
   @Post()
   @ApiResponse({
