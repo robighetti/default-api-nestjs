@@ -3,16 +3,16 @@ import {
   Injectable,
   UnauthorizedException,
 } from "@nestjs/common"
-import { SessionRequestDto } from "./dto/session.request.dto"
-import { SessionResponseDto } from "./dto/session.response.dto"
-import { SessionsRepository } from "./repositories/sessions.repository"
+import { SessionRequestDto } from "../dto/session.request.dto"
+import { SessionResponseDto } from "../dto/session.response.dto"
+import { SessionsRepositoryInterface } from "../repositories/sessions.repository.interface"
 import { compare } from "bcryptjs"
 import { JwtService } from "@nestjs/jwt"
 
 @Injectable()
 export class SessionsService {
   constructor(
-    private readonly sessionsRepository: SessionsRepository,
+    private readonly sessionsRepository: SessionsRepositoryInterface,
     private readonly jwt: JwtService,
   ) {}
 

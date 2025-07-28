@@ -9,7 +9,7 @@ import {
 import { ApiCreatedResponse, ApiResponse, ApiTags } from "@nestjs/swagger"
 import { SessionResponseDto } from "./dto/session.response.dto"
 import { SessionRequestDto } from "./dto/session.request.dto"
-import { SessionsService } from "./sessions.service"
+import { SessionsService } from "./services/sessions.service"
 
 @ApiTags("Sessions")
 @Controller("sessions")

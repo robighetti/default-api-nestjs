@@ -11,6 +11,10 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule, {
     logger: [
       "log",
+      "debug",
+      "error",
+      "warn",
+      "verbose",
       ...(process.env.LOGGER_LEVEL?.split(",") || []).map(
         (level) => level as LogLevel,
       ),
@@ -26,6 +30,14 @@ async function bootstrap() {
     infer: true,
   })
   const nodeEnv = configService.get("NODE_ENV", { infer: true })
+
+  // Enable debug mode
+  if (nodeEnv.trim() === "local") {
+    logger.debug("🔧 Debug mode enabled")
+    logger.debug(`Environment: ${nodeEnv}`)
+    logger.debug(`Port: ${port}`)
+    logger.debug(`Application Title: ${applicationTitle}`)
+  }
 
   const config = new DocumentBuilder()
     .setTitle(applicationTitle)
@@ -54,12 +66,15 @@ async function bootstrap() {
 
   if (nodeEnv.trim() == "local") {
     new Documentation(document).buildTextDocumentation()
+    logger.debug("📚 Documentation generated")
   }
 
   app.enableCors()
 
   app.listen(port, "0.0.0.0").then(() => {
     logger.log("🔥 HTTP Server Running!")
+    logger.debug(`🚀 Server started on port ${port}`)
+    logger.debug(`📖 Swagger docs available at http://localhost:${port}/docs`)
   })
 }
 bootstrap()

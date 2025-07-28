@@ -7,7 +7,8 @@ export default defineConfig({
   test: {
     globals: true,
     root: "./",
-  },
+    exclude: ["node_modules", "dist", "build"],
+  },  
   plugins: [
     // This is required to build the test files with SWC
     tsConfigPaths(),
@@ -21,5 +22,5 @@ export default defineConfig({
       // Ensure Vitest correctly resolves TypeScript path aliases
       src: "./src",
     },
-  },
+  },  
 })

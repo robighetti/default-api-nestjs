@@ -1,5 +1,5 @@
 @baseUrl = http://localhost:3333
-@token = {{authenticate.response.body.access_token}}
+#@token = {{authenticate.response.body.access_token}}
 
 ###
 
@@ -9,9 +9,10 @@ Content-Type: application/json
 
 {
   "name": "Rodrigo Bighetti",
-  "email": "rodrigo@stack2u.net",
+  "email": "rodrigo1@stack2u.net",
   "whatsapp": "+55 19 999828057",
-  "password": "P@ssW0rd"
+  "password": "P@ssW0rd",
+  "id_profile": "4dd8b1a6-94fa-41a7-a01c-20f2b6444dd5"
 }
 
 ###
@@ -21,8 +22,8 @@ POST {{baseUrl}}/sessions
 Content-Type: application/json
 
 {
-  "email": "rodrigo@email.com",
-  "password": "123456"
+  "email": "rodrigo@stack2u.net",
+  "password": "P@ssW0rd"
 }
 
 ###

@@ -12,7 +12,7 @@ describe("Create Account Service", () => {
   })
 
   it("should be able to create a new account", async () => {
-    const account = await makeAccount()
+    const account = await makeAccount("123456")
 
     const { id } = await sut.createAccount(account)
 
