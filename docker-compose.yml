@@ -7,7 +7,7 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: docker@123
-      POSTGRES_DB: nest_clean
+      POSTGRES_DB: stack-api
       PGDATA: /data/postgres
     restart: always
     ports:

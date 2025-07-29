@@ -27,3 +27,11 @@ Content-Type: application/json
 }
 
 ###
+
+# @name forgotPassword
+POST {{baseUrl}}/forgot-password
+Content-Type: application/json
+
+{
+  "email": "admin@stack2u.net"
+}

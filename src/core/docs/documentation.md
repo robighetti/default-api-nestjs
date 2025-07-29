@@ -1,5 +1,5 @@
 ## Default API Documentation
-*Automatically Generated at: Mon Jul 28 2025 17:41:13 GMT-0300 (Brasilia Standard Time)*
+*Automatically Generated at: Tue Jul 29 2025 19:40:25 GMT-0300 (Brasilia Standard Time)*
 
 ### [POST] /sessions
 **Parameters:**
@@ -41,5 +41,18 @@ email: The email of the user
 whatsapp: The whatsapp of the user
 
 id_profile: The id_profile of the user
+
+
+### [POST] /forgot-password
+**Parameters:**
+
+| where | name | description | type | required |
+| --- | --- | --- | --- | --- |
+
+**Responses:**
+
+200: Return the forgot password payload
+
+message: The message of the user
 
 
