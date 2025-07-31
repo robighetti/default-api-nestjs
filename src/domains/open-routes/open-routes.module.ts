@@ -5,11 +5,13 @@ import { OpenRoutesInterface } from "./repositories/open-routes.repository.inter
 import { OpenRoutesRepository } from "./repositories/open-routes.repository"
 import { AccountsRepositoryInterface } from "../accounts/repositories/accounts.repository.interface"
 import { AccountsRepository } from "../accounts/repositories/accounts.repository"
+import { ResetPasswordService } from "./services/reset-password.service"
 
 @Module({
   controllers: [OpenRoutesController],
   providers: [
     ForgotPasswordService,
+    ResetPasswordService,
     {
       provide: OpenRoutesInterface,
       useClass: OpenRoutesRepository,

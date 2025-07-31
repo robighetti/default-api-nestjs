@@ -1,5 +1,5 @@
 ## Default API Documentation
-*Automatically Generated at: Thu Jul 31 2025 16:44:10 GMT-0300 (Brasilia Standard Time)*
+*Automatically Generated at: Thu Jul 31 2025 17:47:46 GMT-0300 (Brasilia Standard Time)*
 
 ### [POST] /sessions
 **Parameters:**
@@ -52,6 +52,20 @@ id_profile: The id_profile of the user
 **Responses:**
 
 200: Return the forgot password payload
+
+message: The message of the user
+
+
+### [PATCH] /reset-password/{token}
+**Parameters:**
+
+| where | name | description | type | required |
+| --- | --- | --- | --- | --- |
+| path | token | The reset token from URL | string | true |
+
+**Responses:**
+
+200: Return the reset password payload
 
 message: The message of the user
 

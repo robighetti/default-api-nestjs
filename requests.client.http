@@ -1,5 +1,6 @@
 @baseUrl = http://localhost:3333
-#@token = {{authenticate.response.body.access_token}}
+@token = {{authenticate.response.body.access_token}}
+@resetToken = 420ec381-93ff-47d8-883b-e2ce596f7d15
 
 ###
 
@@ -34,4 +35,14 @@ Content-Type: application/json
 
 {
   "email": "admin@stack2u.net"
+}
+
+###
+
+# @name resetPassword
+PATCH {{baseUrl}}/reset-password/{{resetToken}}
+Content-Type: application/json
+
+{
+  "password": "P@ssW0rd"
 }
