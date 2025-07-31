@@ -66,15 +66,13 @@ async function bootstrap() {
 
   if (nodeEnv.trim() == "local") {
     new Documentation(document).buildTextDocumentation()
-    logger.debug("📚 Documentation generated")
   }
 
   app.enableCors()
 
   app.listen(port, "0.0.0.0").then(() => {
-    logger.log("🔥 HTTP Server Running!")
-    logger.debug(`🚀 Server started on port ${port}`)
-    logger.debug(`📖 Swagger docs available at http://localhost:${port}/docs`)
+    logger.debug(`🚀 Server started on http://127.0.0.1:${port}`)
+    logger.debug(`📖 Swagger docs available at http://127.0.0.1:${port}/docs`)
   })
 }
 bootstrap()

@@ -1,6 +1,6 @@
 import { ApiProperty } from "@nestjs/swagger"
 import { Type } from "class-transformer"
-import { IsEmail, IsString } from "class-validator"
+import { IsEmail, IsOptional, IsString } from "class-validator"
 
 export class CreateAccountRequestDto {
   @ApiProperty({
@@ -28,6 +28,7 @@ export class CreateAccountRequestDto {
     required: true,
   })
   @Type(() => String)
+  @IsOptional()
   @IsString({ message: "Whatsapp must be a string" })
   whatsapp: string
 

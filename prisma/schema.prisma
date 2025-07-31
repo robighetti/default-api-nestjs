@@ -21,9 +21,9 @@ model Users {
   id         String   @id @default(uuid())
   name       String
   email      String   @unique
-  whatsapp   String
+  whatsapp   String?
   avatar     String?
-  password   String
+  password   String?
   id_profile String
   status     Boolean? @default(true)
 

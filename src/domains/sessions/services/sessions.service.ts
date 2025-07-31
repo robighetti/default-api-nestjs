@@ -8,6 +8,7 @@ import { SessionResponseDto } from "../dto/session.response.dto"
 import { SessionsRepositoryInterface } from "../repositories/sessions.repository.interface"
 import { compare } from "bcryptjs"
 import { JwtService } from "@nestjs/jwt"
+import { SessionEntity } from "../entities/session.entity"
 
 @Injectable()
 export class SessionsService {
@@ -26,6 +27,10 @@ export class SessionsService {
       throw new BadRequestException("User credentials are invalid")
     }
 
+    if (!user.password) {
+      throw new BadRequestException("User credentials are invalid")
+    }
+
     const isPasswordValid = await compare(password, user.password)
     if (!isPasswordValid) {
       throw new UnauthorizedException("User credentials are invalid")
@@ -33,15 +38,9 @@ export class SessionsService {
 
     const acessToken = this.jwt.sign({ sub: user.id })
 
-    return {
+    return SessionEntity.fromEntity({
+      user,
       access_token: acessToken,
-      user: {
-        name: user.name,
-        email: user.email,
-        whatsapp: user.whatsapp || "",
-        avatar: user.avatar || "",
-        id_profile: user.id_profile || "",
-      },
-    }
+    }).serialize()
   }
 }

@@ -2,6 +2,14 @@ import { ApiProperty } from "@nestjs/swagger"
 
 export class UserLoggedProps {
   @ApiProperty({
+    description: "The ID of the user",
+    example: "12345",
+    type: "string",
+    nullable: false,
+  })
+  id: string
+
+  @ApiProperty({
     description: "The name of the user",
     example: "Luke Skywalker",
     type: "string",
@@ -23,7 +31,7 @@ export class UserLoggedProps {
     type: "string",
     nullable: true,
   })
-  whatsapp: string
+  whatsapp: string | null
 
   @ApiProperty({
     description: "The avatar url of the user",
@@ -31,13 +39,13 @@ export class UserLoggedProps {
     type: "string",
     nullable: true,
   })
-  avatar?: string
+  avatar?: string | null
 
   @ApiProperty({
     description: "The id profile of the user",
     example: "1234567890",
     type: "string",
-    nullable: true,
+    nullable: false,
   })
   id_profile: string
 }

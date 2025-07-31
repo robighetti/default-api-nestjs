@@ -22,7 +22,7 @@ POST {{baseUrl}}/sessions
 Content-Type: application/json
 
 {
-  "email": "rodrigo@stack2u.net",
+  "email": "admin@stack2u.net",
   "password": "P@ssW0rd"
 }
 

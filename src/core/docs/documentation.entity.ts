@@ -35,7 +35,6 @@ class Documentation {
   }
 
   generateTextDocumentation() {
-    console.log("Generating Text Documentation...")
     const swagger = this.jsonDocument
     let documentation = `## ${swagger.info.title} Documentation\n`
     documentation += `*Automatically Generated at: ${new Date()}*\n\n`

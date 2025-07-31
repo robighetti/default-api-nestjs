@@ -29,9 +29,9 @@ export class CreateAccountResponseDto {
     description: "The whatsapp of the user",
     example: "5511999999999",
     type: "string",
-    nullable: false,
+    nullable: true,
   })
-  whatsapp: string
+  whatsapp?: string | null
 
   @ApiProperty({
     description: "The id_profile of the user",
