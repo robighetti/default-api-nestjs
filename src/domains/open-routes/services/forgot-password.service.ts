@@ -7,10 +7,12 @@ import { passwordRecovery } from "../utils/emails-template/passwordRecovery"
 import { randomUUID } from "node:crypto"
 import { Env } from "@/infra/env"
 import { ConfigService } from "@nestjs/config"
+import { AccountsRepositoryInterface } from "@/domains/accounts/repositories/accounts.repository.interface"
 
 @Injectable()
 export class ForgotPasswordService {
   constructor(
+    private readonly accountsRepository: AccountsRepositoryInterface,
     private readonly openRoutesRepository: OpenRoutesInterface,
     private readonly emailsService: EmailsService,
     private readonly config: ConfigService<Env, true>,
@@ -20,7 +22,7 @@ export class ForgotPasswordService {
     body: ForgotPasswordRequestDto,
   ): Promise<ForgotPasswordResponseDto> {
     const { email } = body
-    const user = await this.openRoutesRepository.findByEmail(email)
+    const user = await this.accountsRepository.findByEmail(email)
     if (!user) {
       throw new BadRequestException("Credential not found")
     }

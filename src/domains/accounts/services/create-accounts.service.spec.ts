@@ -1,4 +1,4 @@
-import { InMemoryAccountsRepository } from "@test/repositories/in-memory-accounts-repository"
+import { InMemoryAccountsRepository } from "@test/repositories/in-memory-accounts.repository"
 import { CreateAccountsService } from "./create-accounts.service"
 import { makeAccount } from "@test/factories/make-account"
 

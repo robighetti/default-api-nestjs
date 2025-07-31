@@ -1,7 +1,7 @@
 import { createHash } from "@/core/helpers/cryptography/encrypter"
 import { faker } from "@faker-js/faker"
 
-import { InMemoryAccountsRepository } from "@test/repositories/in-memory-accounts-repository"
+import { InMemoryAccountsRepository } from "@test/repositories/in-memory-accounts.repository"
 import { randomUUID } from "node:crypto"
 
 export async function makeAccount(password: string) {

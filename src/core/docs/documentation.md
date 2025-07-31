@@ -1,5 +1,5 @@
 ## Default API Documentation
-*Automatically Generated at: Thu Jul 31 2025 15:44:17 GMT-0300 (Brasilia Standard Time)*
+*Automatically Generated at: Thu Jul 31 2025 16:44:10 GMT-0300 (Brasilia Standard Time)*
 
 ### [POST] /sessions
 **Parameters:**

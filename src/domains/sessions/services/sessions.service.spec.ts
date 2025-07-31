@@ -1,7 +1,7 @@
 import { JwtService } from "@nestjs/jwt"
 import { SessionsService } from "./sessions.service"
 import { makeAccount } from "@test/factories/make-account"
-import { InMemoryAccountsRepository } from "@test/repositories/in-memory-accounts-repository"
+import { InMemoryAccountsRepository } from "@test/repositories/in-memory-accounts.repository"
 
 describe("SessionsService", () => {
   let sut: SessionsService

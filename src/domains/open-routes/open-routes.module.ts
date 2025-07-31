@@ -3,6 +3,8 @@ import { OpenRoutesController } from "./open-routes.controller"
 import { ForgotPasswordService } from "./services/forgot-password.service"
 import { OpenRoutesInterface } from "./repositories/open-routes.repository.interface"
 import { OpenRoutesRepository } from "./repositories/open-routes.repository"
+import { AccountsRepositoryInterface } from "../accounts/repositories/accounts.repository.interface"
+import { AccountsRepository } from "../accounts/repositories/accounts.repository"
 
 @Module({
   controllers: [OpenRoutesController],
@@ -11,6 +13,10 @@ import { OpenRoutesRepository } from "./repositories/open-routes.repository"
     {
       provide: OpenRoutesInterface,
       useClass: OpenRoutesRepository,
+    },
+    {
+      provide: AccountsRepositoryInterface,
+      useClass: AccountsRepository,
     },
   ],
 })

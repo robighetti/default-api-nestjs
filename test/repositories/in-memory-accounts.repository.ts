@@ -2,6 +2,7 @@ import {
   AccountsRepositoryInterface,
   UsersProps,
 } from "@/domains/accounts/repositories/accounts.repository.interface"
+
 import { Users } from "@prisma/client"
 import { randomUUID } from "node:crypto"
 
