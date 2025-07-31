@@ -12,12 +12,12 @@ import { ForgotPasswordResponseDto } from "./dto/forgot-password.response.dto"
 import { ForgotPasswordRequestDto } from "./dto/forgot-password.request.dto"
 
 @ApiTags("Open Routes")
-@Controller("forgot-password")
+@Controller()
 @UsePipes(new ValidationPipe({ transform: true }))
-export class ForgotPasswordController {
+export class OpenRoutesController {
   constructor(private readonly forgotPasswordService: ForgotPasswordService) {}
 
-  @Post()
+  @Post("forgot-password")
   @ApiResponse({
     type: ForgotPasswordResponseDto,
     status: HttpStatus.OK,

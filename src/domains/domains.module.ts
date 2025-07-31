@@ -1,7 +1,7 @@
 import { Module } from "@nestjs/common"
 import { SessionsModule } from "./sessions/sessions.module"
 import { AccountsModule } from "./accounts/accounts.module"
-import { ForgotPasswordModule } from "./forgot-password/forgot-password.module"
+import { OpenRoutesModule } from "./open-routes/open-routes.module"
 
 import { PrismaModule } from "@/infra/prisma/prisma.module"
 import { EmailsModule } from "@/infra/emails/emails.module"
@@ -11,7 +11,7 @@ import { EmailsModule } from "@/infra/emails/emails.module"
     PrismaModule,
     SessionsModule,
     AccountsModule,
-    ForgotPasswordModule,
+    OpenRoutesModule,
     EmailsModule,
   ],
 })
